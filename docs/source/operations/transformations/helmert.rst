@@ -194,14 +194,14 @@ Parameters
 Mathematical description
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-In the notation used below, :math:`\hat{P}` is the rate of change of a given transformation
-parameter :math:`P`. :math:`\dot{P}` is the kinematically adjusted version of :math:`P`,
+In the notation used below, :math:`\dot{P}` is the rate of change of a given transformation
+parameter :math:`P`. :math:`\hat{P}` is the kinematically adjusted version of :math:`P`,
 described by
 
 .. math::
     :label: propagation
 
-    \dot{P}= P + \hat{P}\left(t - t_{central}\right)
+    \hat{P}= P + \dot{P}\left(t - t_{central}\right)
 
 where :math:`t` is the observation time of the coordinate and :math:`t_{central}` is
 the central epoch of the transformation. Equation :eq:`propagation` can be used to
@@ -263,13 +263,13 @@ the kinematic 2D Helmert transform:
             Y \\
         \end{bmatrix}^B =
         \begin{bmatrix}
-            \dot{T_x} \\
-            \dot{T_y} \\
+            \hat{T_x} \\
+            \hat{T_y} \\
         \end{bmatrix} +
         s(t)
         \begin{bmatrix}
-             \hphantom{-}\cos \dot{\theta} & \sin \dot{\theta}  \\
-                        -\sin\ \dot{\theta} & \cos \dot{\theta} \\
+             \hphantom{-}\cos \hat{\theta} & \sin \hat{\theta}  \\
+                        -\sin\ \hat{\theta} & \cos \hat{\theta} \\
         \end{bmatrix}
         \begin{bmatrix}
             X \\
@@ -411,15 +411,15 @@ Applying :eq:`propagation` we get the kinematic version of the approximated
             Z \\
         \end{bmatrix}^B =
         \begin{bmatrix}
-            \dot{T_x} \\
-            \dot{T_y} \\
-            \dot{T_z} \\
+            \hat{T_x} \\
+            \hat{T_y} \\
+            \hat{T_z} \\
         \end{bmatrix} +
         \left(1 + \dot{s} \times 10^{-6}\right)
         \begin{bmatrix}
-             1         & -\dot{R_z}  &  \dot{R_y} \\
-             \dot{R_z} &  1          & -\dot{R_x} \\
-            -\dot{R_y} &  \dot{R_x}  &  1      \\
+             1         & -\hat{R_z}  &  \hat{R_y} \\
+             \dot{R_z} &  1          & -\hat{R_x} \\
+            -\hat{R_y} &  \hat{R_x}  &  1      \\
         \end{bmatrix}
         \begin{bmatrix}
             X \\
@@ -470,9 +470,9 @@ counterpart:
             Z \\
         \end{bmatrix}^B =
         \begin{bmatrix}
-            \dot{T_x} \\
-            \dot{T_y} \\
-            \dot{T_z} \\
+            \hat{T_x} \\
+            \hat{T_y} \\
+            \hat{T_z} \\
         \end{bmatrix} +
         \begin{bmatrix}
             X \\
